@@ -172,7 +172,7 @@
         var fechafin = $("#select_ffin").val();
 
         $.ajax({
-            url: 'controlador-grafico.php',
+            url: 'controlador-grafico-parametro.php',
             type: 'POST',
             data: {
                 inicio:fechainicio,
