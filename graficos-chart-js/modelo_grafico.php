@@ -1,5 +1,3 @@
-///conexion.php
-
 <?php
 	class Modelo_Grafico{
 		private $conexion;
