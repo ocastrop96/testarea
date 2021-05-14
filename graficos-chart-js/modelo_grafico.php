@@ -26,7 +26,7 @@ class Modelo_Grafico
 
 	function TraerDatosGraficoParametro($fechaInicio, $fechaFin)
 	{
-		$sql = "CALL SP_DATOSGRAFICOPARAMETRO";
+		$sql = "CALL SP_DATOSGRAFICOPARAMETRO('$fechaInicio','$fechaFin')";
 		$arreglo = array();
 		if ($consulta = $this->conexion->conexion->query($sql)) {
 

@@ -50,7 +50,7 @@
                     </div>
                     <div class="col-lg-2">
                         <label for="">&nbsp;</label><br>
-                        <button class="btn btn-danger">BUSCAR</button>
+                        <button class="btn btn-danger" onclick="CargarDatosGraficoDona()">BUSCAR</button>
                     </div>
                 </div>
                 <div class="row">
@@ -165,7 +165,7 @@
         $("#select_ffin").html(cadena);
 
     }
-    CargarDatosGraficoDona();
+    // CargarDatosGraficoDona();
 
     function CargarDatosGraficoDona() {
         var fechainicio = $("#select_finicio").val();
@@ -175,8 +175,8 @@
             url: 'controlador-grafico-parametro.php',
             type: 'POST',
             data: {
-                inicio:fechainicio,
-                fin:fechafin
+                inicio: fechainicio,
+                fin: fechafin
             }
         }).done(function(resp) {
             if (resp.length > 0) {
@@ -185,11 +185,11 @@
                 var cantidad = [];
                 var colores = [];
                 for (var i = 0; i < data.length; i++) {
-                    titulo.push(data[i][1]);
-                    cantidad.push(data[i][2]);
+                    titulo.push(data[i][0]);
+                    cantidad.push(data[i][1]);
                     colores.push(colorRGB());
                 }
-                CrearGrafico(titulo, cantidad, colores, 'scatter', 'GRÁFICO EN DONA DE PRODUCTOS', 'myChartDonnut_parametro')
+                CrearGrafico(titulo, cantidad, colores, 'doughnut', 'GRÁFICO EN DONA DE PRODUCTOS', 'myChartDonnut_parametro')
             }
         });
     }
